@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "AvenirNext-DemiBold";
+  src: local("AvenirNext-DemiBold"),
+    url(./AvenirNext-DemiBold.ttf) format("ttf");
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* overflow: scroll !important; */
+  font-family: "AvenirNext-DemiBold";
+}
+
+.close-button {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  box-sizing: border-box;
+  line-height: 20px;
+  display: inline-block;
+  background-color: #27a4e1;
+}
+.close-button:before,
+.close-button:after {
+  transform: rotate(-45deg);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -2.5px;
+  margin-left: -10px;
+  display: block;
+  height: 5px;
+  width: 20px;
+  background-color: #fff;
+  transition: all 0.2s ease-out;
+}
+.close-button:after {
+  transform: rotate(45deg);
+}
+.close-button:hover:before,
+.close-button:hover:after {
+  transform: rotate(0deg);
+}
+
+#toggle {
+  width: 28px;
+  height: 30px;
+  position: absolute;
+  left: 15px;
+  top: 10px;
+}
+
+#toggle div {
+  width: 100%;
+  height: 5px;
+  background: white;
+  margin: 4px auto;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  background-color: #27a4e1;
+  z-index: 5;
+}
+
+#toggle.on .one {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#toggle.on .two {
+  opacity: 0;
+}
+
+#toggle.on .three {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+
+.checkbox {
+  margin-left: 20%;
+}
+
+.checkbox input {
+  -webkit-appearance: none;
+}
+
+.checkbox label {
+  cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  margin: 5px;
+}
+
+.checkbox label:hover::after {
+  opacity: 0.5;
+}
+
+.checkbox input[type="checkbox"]:checked + label:after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 8px;
+  background: transparent;
+  top: 8px;
+  left: 7px;
+  border: 3px solid #27a4e1;
+  border-top: none;
+  border-right: none;
+
+  transform: rotate(-50deg);
+}
